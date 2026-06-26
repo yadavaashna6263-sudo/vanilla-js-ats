@@ -1,0 +1,64 @@
+/* =========================================================
+   THEME.CSS — Light mode override
+   Default :root in style.css IS the dark "Spotlight" theme.
+   [data-theme="light"] swaps the stage for daylight.
+   ========================================================= */
+
+[data-theme='light'] {
+  --bg: #f5f3ee;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #f0ede6;
+  --border: rgba(20, 20, 20, 0.08);
+  --border-strong: rgba(20, 20, 20, 0.16);
+
+  --text: #15171b;
+  --text-muted: #5c636e;
+  --text-faint: #8a8f98;
+
+  --accent: #b9842e;
+  --accent-strong: #9c6c1f;
+  --accent-soft: rgba(185, 132, 46, 0.12);
+  --accent-ink: #fffaf0;
+
+  --accent-2: #1e9e92;
+  --accent-2-soft: rgba(30, 158, 146, 0.12);
+
+  --danger: #c93b52;
+  --danger-soft: rgba(201, 59, 82, 0.1);
+
+  --shadow-spotlight: 0 0 140px rgba(185, 132, 46, 0.1);
+  --shadow-card: 0 8px 30px rgba(20, 20, 20, 0.08);
+}
+
+[data-theme='light'] .brand-mark {
+  box-shadow: 0 0 18px var(--accent-soft);
+}
+
+/* Toggle icon swap: sun shown in dark mode (click to go light),
+   moon shown in light mode (click to go dark) */
+.theme-toggle .icon-sun {
+  display: none;
+}
+.theme-toggle .icon-moon {
+  display: block;
+}
+
+[data-theme='light'] .theme-toggle .icon-sun {
+  display: block;
+}
+[data-theme='light'] .theme-toggle .icon-moon {
+  display: none;
+}
+
+/* Smooth cross-theme transition for surfaces already in style.css;
+   extend to common form/card borders here */
+.card,
+.btn--ghost,
+.field input,
+.field select,
+.field textarea,
+.skill-tag,
+.upload-zone {
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}

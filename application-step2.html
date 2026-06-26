@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotlight — Professional Information</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="apply" data-progress="40" data-progress-label="Step 2 of 5 · 40%" data-step-index="1">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand"><span class="brand-mark" aria-hidden="true"></span>Spotlight</a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="index.html" data-nav-key="home">Home</a>
+        <a href="jobs.html" data-nav-key="jobs">Jobs</a>
+        <a href="dashboard.html" data-nav-key="dashboard">Dashboard</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="Switch between dark and light theme" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section--tight">
+      <div class="container form-shell">
+        <div class="form-steps" aria-hidden="true">
+          <div class="form-step"></div><div class="form-step"></div><div class="form-step"></div>
+          <div class="form-step"></div><div class="form-step"></div>
+        </div>
+        <div class="form-steps-labels" aria-hidden="true">
+          <span>Personal</span><span>Professional</span><span>Experience</span><span>Account</span><span>Review</span>
+        </div>
+
+        <div id="profileCompletion" class="completion-widget"></div>
+
+        <div class="form-card fade-in">
+          <span class="eyebrow">Step 2 of 5</span>
+          <h2 style="font-size:1.6rem;margin-bottom:6px;">Professional Information</h2>
+          <p style="margin-bottom:28px;">Show us your work — links, education, and skills.</p>
+
+          <form id="step2Form" novalidate>
+            <div class="error-summary" id="errorSummary" role="alert" aria-live="assertive"></div>
+
+            <div class="field">
+              <label for="linkedin">LinkedIn URL</label>
+              <input type="url" id="linkedin" placeholder="https://linkedin.com/in/your-username" aria-describedby="linkedin-error" />
+              <svg class="field-valid-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <p id="linkedin-error" class="field-error" role="alert"></p>
+            </div>
+
+            <div class="field">
+              <label for="github">GitHub URL</label>
+              <input type="url" id="github" placeholder="https://github.com/your-username" aria-describedby="github-error" />
+              <svg class="field-valid-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <p id="github-error" class="field-error" role="alert"></p>
+            </div>
+
+            <div class="field">
+              <label for="portfolio">Portfolio URL <span style="color:var(--text-faint);font-weight:400;">(optional)</span></label>
+              <input type="url" id="portfolio" placeholder="https://yourname.dev" aria-describedby="portfolio-error" />
+              <svg class="field-valid-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <p id="portfolio-error" class="field-error" role="alert"></p>
+            </div>
+
+            <div class="field">
+              <label for="education">Education<span class="required-mark" aria-hidden="true">*</span></label>
+              <select id="education" required>
+                <option value="" disabled selected>Select your qualification</option>
+                <option value="BCA">BCA</option>
+                <option value="BTech">BTech</option>
+                <option value="MCA">MCA</option>
+                <option value="MTech">MTech</option>
+                <option value="BSc">BSc</option>
+                <option value="MSc">MSc</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="skillSearch">Skills<span class="required-mark" aria-hidden="true">*</span></label>
+              <div class="skill-search">
+                <input type="text" id="skillSearch" placeholder="Type a skill — React, Node.js, Docker…"
+                  autocomplete="off" role="combobox" aria-expanded="false" aria-controls="skillSuggestions" />
+                <div class="skill-suggestions" id="skillSuggestions" role="listbox"></div>
+              </div>
+              <div class="selected-skills-chips" id="selectedSkillsChips"></div>
+              <p id="skillsCount" class="skills-count"></p>
+            </div>
+
+            <button type="submit" id="step2NextBtn" class="btn btn--primary btn--block" disabled>
+              Next: Experience &amp; Resume
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-note">© <span data-year></span> Spotlight ATS — a frontend systems demo.</p>
+      <p class="footer-note mono">Auto-saved as you type</p>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/completion.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/skills.js"></script>
+</body>
+</html>

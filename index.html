@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotlight — Join Our Team</title>
+  <meta name="description" content="Spotlight is hiring. Explore open roles and apply in minutes." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="home">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand"><span class="brand-mark" aria-hidden="true"></span>Spotlight</a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="index.html" data-nav-key="home">Home</a>
+        <a href="jobs.html" data-nav-key="jobs">Jobs</a>
+        <a href="dashboard.html" data-nav-key="dashboard">Dashboard</a>
+      </nav>
+      <div class="header-actions">
+        <a href="login.html" class="btn btn--ghost btn--sm">Log In</a>
+        <a href="jobs.html" class="btn btn--primary btn--sm">Sign Up</a>
+        <button class="theme-toggle" aria-label="Switch between dark and light theme" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+        <button class="mobile-menu-btn" aria-label="Open menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="mobile-nav-panel">
+      <a href="index.html" data-nav-key="home">Home</a>
+      <a href="jobs.html" data-nav-key="jobs">Jobs</a>
+      <a href="dashboard.html" data-nav-key="dashboard">Dashboard</a>
+      <a href="login.html">Log In</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="spotlight section">
+      <div class="container text-center" style="max-width:760px;margin:0 auto;">
+        <span class="eyebrow">Now Hiring · Spotlight Careers</span>
+        <h1 class="fade-in">Join Our Team.</h1>
+        <h2 class="fade-in fade-in--delay-1" style="color:var(--text-muted);font-weight:400;font-size:clamp(1.1rem,2.4vw,1.5rem);margin-top:10px;">
+          Build the future with us.
+        </h2>
+        <p class="lede fade-in fade-in--delay-2" style="margin:22px auto 32px;">
+          A hiring experience that feels considered, not transactional — from your first
+          look at an open role to the moment your application lands on a recruiter's desk.
+        </p>
+        <a href="jobs.html" class="btn btn--primary fade-in fade-in--delay-3">Apply Now</a>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="section--tight" id="statsSection">
+      <div class="container">
+        <div class="grid grid--3">
+          <div class="card text-center">
+            <div class="stat-number mono" data-count-to="500" data-suffix="+" style="font-size:2.4rem;font-weight:700;color:var(--accent);">0</div>
+            <p>Employees</p>
+          </div>
+          <div class="card text-center">
+            <div class="stat-number mono" data-count-to="25" style="font-size:2.4rem;font-weight:700;color:var(--accent);">0</div>
+            <p>Open Positions</p>
+          </div>
+          <div class="card text-center">
+            <div class="stat-number mono" data-count-to="15" style="font-size:2.4rem;font-weight:700;color:var(--accent);">0</div>
+            <p>Countries</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why work with us -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">The Fine Print, Made Pleasant</span>
+          <h2>Why Work With Us</h2>
+        </div>
+        <div class="grid grid--4">
+          <div class="card">
+            <h3 style="font-size:1.05rem;margin-bottom:8px;">Remote Friendly</h3>
+            <p>Work from wherever you do your best thinking.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size:1.05rem;margin-bottom:8px;">Flexible Hours</h3>
+            <p>Structure your day around your energy, not a clock.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size:1.05rem;margin-bottom:8px;">Health Benefits</h3>
+            <p>Comprehensive coverage for you and your family.</p>
+          </div>
+          <div class="card">
+            <h3 style="font-size:1.05rem;margin-bottom:8px;">Learning Budget</h3>
+            <p>An annual stipend for courses, books, and conferences.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-note">© <span data-year></span> Spotlight ATS — a frontend systems demo.</p>
+      <p class="footer-note mono">Vanilla HTML · CSS · JS — no backend</p>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/progress.js"></script>
+</body>
+</html>

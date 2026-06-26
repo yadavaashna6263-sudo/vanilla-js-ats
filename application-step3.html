@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spotlight — Experience &amp; Resume</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/forms.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+<body data-page="apply" data-progress="60" data-progress-label="Step 3 of 5 · 60%" data-step-index="2">
+  <a href="#main" class="skip-link">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="brand"><span class="brand-mark" aria-hidden="true"></span>Spotlight</a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="index.html" data-nav-key="home">Home</a>
+        <a href="jobs.html" data-nav-key="jobs">Jobs</a>
+        <a href="dashboard.html" data-nav-key="dashboard">Dashboard</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" aria-label="Switch between dark and light theme" aria-pressed="false">
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section--tight">
+      <div class="container form-shell">
+        <div class="form-steps" aria-hidden="true">
+          <div class="form-step"></div><div class="form-step"></div><div class="form-step"></div>
+          <div class="form-step"></div><div class="form-step"></div>
+        </div>
+        <div class="form-steps-labels" aria-hidden="true">
+          <span>Personal</span><span>Professional</span><span>Experience</span><span>Account</span><span>Review</span>
+        </div>
+
+        <div id="profileCompletion" class="completion-widget"></div>
+
+        <div class="form-card fade-in">
+          <span class="eyebrow">Step 3 of 5</span>
+          <h2 style="font-size:1.6rem;margin-bottom:6px;">Experience &amp; Resume</h2>
+          <p style="margin-bottom:28px;">Tell us about your last role and attach your resume.</p>
+
+          <form id="step3Form" novalidate>
+            <div class="error-summary" id="errorSummary" role="alert" aria-live="assertive"></div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="joiningDate">Joining Date<span class="required-mark" aria-hidden="true">*</span></label>
+                <input type="date" id="joiningDate" required />
+              </div>
+              <div class="field">
+                <label for="lastWorkingDate">Last Working Date<span class="required-mark" aria-hidden="true">*</span></label>
+                <input type="date" id="lastWorkingDate" required />
+              </div>
+            </div>
+            <p id="dateError" class="field-error" role="alert" style="display:none;margin-top:-12px;margin-bottom:16px;"></p>
+            <div id="experienceReadout" class="exp-readout" style="display:none;"></div>
+
+            <div class="field" style="margin-top:24px;">
+              <label for="currentSalary">Current Salary (₹ / year)<span class="required-mark" aria-hidden="true">*</span></label>
+              <input type="text" id="currentSalary" inputmode="numeric" required aria-describedby="currentSalary-error" placeholder="800000" />
+              <svg class="field-valid-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <p id="currentSalary-error" class="field-error" role="alert"></p>
+            </div>
+
+            <div class="field">
+              <label for="expectedSalary">Expected Salary (₹ / year) <span style="color:var(--text-faint);font-weight:400;">(optional)</span></label>
+              <input type="text" id="expectedSalary" inputmode="numeric" aria-describedby="expectedSalary-error" placeholder="1200000" />
+              <svg class="field-valid-tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <p id="expectedSalary-error" class="field-error" role="alert"></p>
+            </div>
+
+            <div class="field">
+              <label>Resume<span class="required-mark" aria-hidden="true">*</span></label>
+              <div class="upload-zone" id="uploadZone" tabindex="0" role="button" aria-label="Upload resume, PDF only, maximum 5 megabytes">
+                <input type="file" id="resumeInput" accept="application/pdf" />
+                <div class="upload-zone-text">
+                  <svg class="upload-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 16V4M12 4 7 9M12 4l5 5"/><path d="M4 16v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3"/></svg>
+                  <p style="font-weight:600;margin-bottom:4px;">Drag &amp; drop your resume here</p>
+                  <p style="font-size:0.85rem;">or click to browse — PDF only, up to 5MB</p>
+                </div>
+              </div>
+              <p id="uploadError" class="field-error" role="alert" style="display:none;"></p>
+              <div class="upload-preview" id="uploadPreview">
+                <svg class="upload-preview-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>
+                <div class="upload-preview-meta">
+                  <p class="upload-preview-name" id="uploadPreviewName"></p>
+                  <p class="upload-preview-size mono" id="uploadPreviewSize"></p>
+                </div>
+                <button type="button" class="upload-remove" id="uploadRemove">Remove</button>
+              </div>
+              <div class="resume-score" id="resumeScore"></div>
+            </div>
+
+            <div class="field">
+              <label for="coverLetter">Cover Letter<span class="required-mark" aria-hidden="true">*</span></label>
+              <textarea id="coverLetter" required aria-describedby="coverLetterCounter" placeholder="Tell us why you're a great fit (100–1000 characters)…"></textarea>
+              <p id="coverLetterCounter" class="char-counter mono">0 / 1000</p>
+            </div>
+
+            <button type="submit" id="step3NextBtn" class="btn btn--primary btn--block" disabled>
+              Next: Create Account
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p class="footer-note">© <span data-year></span> Spotlight ATS — a frontend systems demo.</p>
+      <p class="footer-note mono">Auto-saved as you type</p>
+    </div>
+  </footer>
+
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/completion.js"></script>
+  <script src="js/theme.js"></script>
+  <script src="js/progress.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/experience.js"></script>
+  <script src="js/upload.js"></script>
+</body>
+</html>

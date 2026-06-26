@@ -1,0 +1,171 @@
+/* =========================================================
+   DASHBOARD.CSS — Application Dashboard
+   A vertical status timeline + an explicit "demo controls"
+   panel, since this is a frontend-only project with no
+   backend to actually move an application through stages.
+   ========================================================= */
+
+.dashboard-header-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 28px 30px;
+  margin-bottom: 28px;
+}
+
+.dashboard-app-id {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  color: var(--accent-strong);
+  font-weight: 700;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 24px;
+  align-items: start;
+}
+
+/* ---------- Timeline ---------- */
+.status-timeline {
+  list-style: none;
+  position: relative;
+  padding-left: 4px;
+}
+
+.status-step {
+  position: relative;
+  padding: 0 0 32px 36px;
+}
+
+.status-step:last-child {
+  padding-bottom: 0;
+}
+
+.status-step::before {
+  /* connecting line */
+  content: '';
+  position: absolute;
+  left: 9px;
+  top: 22px;
+  bottom: -4px;
+  width: 2px;
+  background: var(--border);
+}
+
+.status-step:last-child::before {
+  display: none;
+}
+
+.status-dot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--bg-elevated);
+  border: 2px solid var(--border-strong);
+  display: grid;
+  place-items: center;
+}
+
+.status-step.is-done .status-dot {
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+}
+
+.status-step.is-done .status-dot svg {
+  width: 11px;
+  height: 11px;
+  stroke: var(--bg);
+}
+
+.status-step.is-current .status-dot {
+  background: var(--accent);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 5px var(--accent-soft);
+}
+
+.status-step.is-current::before {
+  background: var(--accent-2);
+}
+
+.status-step.is-rejected .status-dot {
+  background: var(--danger);
+  border-color: var(--danger);
+}
+
+.status-step-title {
+  font-weight: 700;
+  font-size: 0.96rem;
+  margin-bottom: 3px;
+}
+
+.status-step.is-pending .status-step-title {
+  color: var(--text-faint);
+  font-weight: 600;
+}
+
+.status-step-date {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  color: var(--text-faint);
+}
+
+.status-step-tag {
+  display: inline-block;
+  margin-top: 6px;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 2px 9px;
+  border-radius: var(--radius-full);
+}
+
+.status-step.is-current .status-step-tag {
+  background: var(--accent-soft);
+  color: var(--accent-strong);
+}
+
+.status-step.is-rejected .status-step-tag {
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+
+/* ---------- Demo controls ---------- */
+.demo-panel {
+  border-style: dashed;
+}
+
+.demo-panel-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  margin-bottom: 14px;
+}
+
+.demo-panel p {
+  font-size: 0.86rem;
+  margin-bottom: 18px;
+}
+
+.demo-panel .btn {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
